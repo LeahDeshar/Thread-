@@ -46,6 +46,8 @@ lerna-debug.log*
 .temp
 .tmp
 
+.prettierrc
+.eslintrc.js
 # Runtime data
 pids
 *.pid
