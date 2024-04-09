@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.development';
 
 type CreateCommentDto = {
   parentId?: string;
@@ -14,17 +15,17 @@ export class CommentService {
   http = inject(HttpClient);
 
   getComments(parentId: string = '') {
-    // let url = `${environment.apiBaseUrl}/comments`;
-    // if (parentId) {
-    //   url += `?parentId=${parentId}`;
-    // }
-    // return this.http.get<Comment[]>(url);
+    let url = `${environment.apiBaseUrl}/comments`;
+    if (parentId) {
+      url += `?parentId=${parentId}`;
+    }
+    return this.http.get<Comment[]>(url);
   }
 
   createComment(comment: CreateCommentDto) {
-    // return this.http.post<Comment>(
-    //   `${environment.apiBaseUrl}/comments`,
-    //   comment,
-    // );
+    return this.http.post<Comment>(
+      `${environment.apiBaseUrl}/comments`,
+      comment,
+    );
   }
 }

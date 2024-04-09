@@ -14,15 +14,15 @@ export class HomeComponent implements OnInit {
   commentService = inject(CommentService);
   comments = signal<Comment[]>([]);
   // userService = inject(UserService);
-  // ngOnInit(): void {
-  //   this.getComments();
-  // }
+  ngOnInit(): void {
+    this.getComments();
+  }
 
-  // getComments() {
-  //   this.commentService.getComments().subscribe((comments) => {
-  //     this.comments.set(comments);
-  //   });
-  // }
+  getComments() {
+    this.commentService.getComments().subscribe((comments) => {
+      this.comments.set(comments);
+    });
+  }
 
   createComment(formValues: { text: string }) {
     const { text } = formValues;

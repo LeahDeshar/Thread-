@@ -38,20 +38,20 @@ export class CommentComponent {
     this.isExpanded.set(!this.isExpanded());
   }
 
-  // createComment(formValues: { text: string }) {
-  //   const { text } = formValues;
-  //   const user = this.userService.getUserFromStorage();
-  //   if (!user) {
-  //     return;
-  //   }
-  //   this.commentService
-  //     .createComment({
-  //       text,
-  //       userId: user._id,
-  //       parentId: this.comment._id,
-  //     })
-  //     .subscribe((createdComment) => {
-  //       this.nestedComments.set([createdComment, ...this.nestedComments()]);
-  //     });
-  // }
+  createComment(formValues: { text: string }) {
+    // const { text } = formValues;
+    // const user = this.userService.getUserFromStorage();
+    // if (!user) {
+    //   return;
+    // }
+    // this.commentService
+    //   .createComment({
+    //     text,
+    //     userId: user._id,
+    //     parentId: this.comment._id,
+    //   })
+    //   .subscribe((createdComment) => {
+    //     this.nestedComments.set([createdComment, ...this.nestedComments()]);
+    //   });
+  }
 }
